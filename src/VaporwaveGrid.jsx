@@ -1,12 +1,6 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 
-// function rotateAroundOrigin(obj, angle) {
-//   obj.position.x =
-//     obj.position.x * Math.cos(angle) - obj.position.y * Math.sin(angle);
-//   obj.position.y =
-//     obj.position.x * Math.sin(angle) + obj.position.y * Math.cos(angle);
-// }
 export default function VaporwaveGrid({ totalWidth, totalHeight, rows, cols }) {
   const planeRef = useRef();
   const sinNormalized = (x) => (Math.sin(Math.PI * x - Math.PI / 2) + 1) / 2;
