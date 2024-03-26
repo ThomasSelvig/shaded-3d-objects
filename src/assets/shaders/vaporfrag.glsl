@@ -9,8 +9,13 @@ void main() {
   space.x *= u_resolution.x / u_resolution.y;
 
   vec2 center = vec2(0.0, 0.0);
-  vec3 color = vec3(1.0, 0.0, 0.0);
-  // vec3 color = vec3(mod(u_time, 1.0), 0.0, 0.0);
+  // vec3 color = vec3(0., vUv.x, vUv.y);
+  vec3 color = vec3(0.);
+  
+  // draw circle in the center of adjusted space
+  if (length(space - center) < 0.5) {
+    color = vec3(1.0);
+  }
 
   gl_FragColor = vec4(color, 1.0);
 }
